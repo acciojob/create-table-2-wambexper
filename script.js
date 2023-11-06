@@ -1,24 +1,22 @@
-//function createTable() {
+function createTable() {
     //Write your code here
-  function createTable() {
-    const numRows = parseInt(document.getElementById("numRows").value);
-    const numColumns = parseInt(document.getElementById("numColumns").value);
+	    // Prompt for the number of rows and columns
+    const numRows = parseInt(prompt("Input number of rows"));
+    const numCols = parseInt(prompt("Input number of columns"));
 
-    if (!isNaN(numRows) && !isNaN(numColumns)) {
-        const table = document.getElementById("myTable");
-        table.innerHTML = '';
+    // Get a reference to the table element
+    const table = document.getElementById("myTable");
 
-        for (let i = 0; i < numRows; i++) {
-            const row = table.insertRow(i);
+    // Clear the existing content of the table
+    table.innerHTML = "";
 
-            for (let j = 0; j < numColumns; j++) {
-                const cell = row.insertCell(j);
-                cell.textContent = `Row ${i + 1}, Col ${j + 1}`;
-            }
+    // Create the table rows and cells
+    for (let i = 0; i < numRows; i++) {
+        const row = table.insertRow(i);
+        for (let j = 0; j < numCols; j++) {
+            const cell = row.insertCell(j);
+            cell.textContent = `Row-${i} Column-${j}`;
         }
-    } else {
-        alert("Invalid input. Please enter valid numbers for rows and columns.");
     }
+  
 }
-
-//}
